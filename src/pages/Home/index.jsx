@@ -6,7 +6,7 @@ import SearchIcon from '@material-ui/icons/Search';
 //import logo from '../../assets/logo.svg';
 import logo2 from '../../assets/logo.png'
 import restaurante from '../../assets/restaurante-fake.png';
-import {Card, RestaurantCard} from '../../components';
+import {Card, RestaurantCard, Modal} from '../../components';
 
 
 //Styles
@@ -16,7 +16,7 @@ import {Wrapper, Container, Search, Logo, Map, Carousel, CarouselTitle} from './
 const Home = () => {
 
   const [inputValue, setInputValue] = useState('');
-  
+  const [modalOpened, setModalOpened] = useState(true);
   const settings = {
     dots: false,
     infinite: true,
@@ -52,6 +52,7 @@ const Home = () => {
         <RestaurantCard/>
       </Container>
       <Map/>
+      <Modal open={modalOpened} onClose = {() => setModalOpened(!modalOpened)}/>
     </Wrapper>
   );
 }
