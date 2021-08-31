@@ -6,11 +6,11 @@ import SearchIcon from '@material-ui/icons/Search';
 //import logo from '../../assets/logo.svg';
 import logo2 from '../../assets/logo.png'
 import restaurante from '../../assets/restaurante-fake.png';
-import {Card, RestaurantCard, Modal} from '../../components';
+import {Card, RestaurantCard, Modal, Map} from '../../components';
 
 
 //Styles
-import {Wrapper, Container, Search, Logo, Map, Carousel, CarouselTitle} from './styles';
+import {Wrapper, Container, Search, Logo, Carousel, CarouselTitle} from './styles';
 
 
 const Home = () => {
@@ -52,7 +52,7 @@ const Home = () => {
         <RestaurantCard/>
       </Container>
       <Map/>
-      <Modal open={modalOpened} onClose = {() => setModalOpened(!modalOpened)}/>
+      {/*<Modal open={modalOpened} onClose = {() => setModalOpened(!modalOpened)}/>*/}
     </Wrapper>
   );
 }
