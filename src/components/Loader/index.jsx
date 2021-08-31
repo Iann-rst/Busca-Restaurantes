@@ -3,7 +3,7 @@ import Lottie from 'react-lottie';
 
 import animationData from '../../assets/restaurants-loading.json';
 
-const Loader = () =>{
+export default () =>{
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -15,5 +15,3 @@ const Loader = () =>{
 
   return <Lottie options={defaultOptions}/>;
 };
-
-export default Loader;
