@@ -14,9 +14,10 @@ import {Wrapper, Container, Search, Logo, Carousel, CarouselTitle} from './style
 
 
 const Home = () => {
-
   const [inputValue, setInputValue] = useState('');
+  const [query, setQuery] = useState(null);
   const [modalOpened, setModalOpened] = useState(true);
+ 
   const settings = {
     dots: false,
     infinite: true,
@@ -26,6 +27,12 @@ const Home = () => {
     adaptiveHeight: true,
   };
   
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      setQuery(inputValue);
+    }
+  }
+
   return(
     <Wrapper>
       <Container>
@@ -37,7 +44,10 @@ const Home = () => {
           // onTrailingIconSelected={()=> this.setState({ value: 'Pesquisar' })}
           trailingIcon={<SearchIcon role="button" icon="search" />}
           >
-          <Input value={inputValue} onChange={(e) => setInputValue(e.target.value)}
+          <Input 
+            value={inputValue} 
+            onKeyPress={handleKeyPress} 
+            onChange={(e) => setInputValue(e.target.value)}
           />  
           </TextField>
           <CarouselTitle>Na sua Área</CarouselTitle>
@@ -51,7 +61,7 @@ const Home = () => {
         </Search>
         <RestaurantCard/>
       </Container>
-      <Map/>
+      <Map query={query}/>
       {/*<Modal open={modalOpened} onClose = {() => setModalOpened(!modalOpened)}/>*/}
     </Wrapper>
   );
