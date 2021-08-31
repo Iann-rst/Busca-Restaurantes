@@ -6,7 +6,7 @@ import SearchIcon from '@material-ui/icons/Search';
 //import logo from '../../assets/logo.svg';
 import logo2 from '../../assets/logo.png'
 import restaurante from '../../assets/restaurante-fake.png';
-import {Card, RestaurantCard, Modal, Map, Loader} from '../../components';
+import {Card, RestaurantCard, Modal, Map, Loader, Skeleton} from '../../components';
 
 
 //Styles
@@ -83,10 +83,21 @@ const Home = () => {
       </Container>
       <Map query={query} placeId={placeId}/>
       <Modal open={modalOpened} onClose = {() => setModalOpened(!modalOpened)}>
-        <ModalTitle>{restaurantSelected?.name}</ModalTitle>
-        <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
-        <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
-        <ModalContent>{restaurantSelected?.opening_hours?.open_now ? 'Aberto Agora :-)' : 'Fechado neste momento :-(' }</ModalContent>
+        {restaurantSelected ? (
+          <>
+            <ModalTitle>{restaurantSelected?.name}</ModalTitle>
+            <ModalContent>{restaurantSelected?.formatted_phone_number}</ModalContent>
+            <ModalContent>{restaurantSelected?.formatted_address}</ModalContent>
+            <ModalContent>{restaurantSelected?.opening_hours?.open_now ? 'Aberto Agora :-)' : 'Fechado neste momento :-(' }</ModalContent>
+          </>
+        ) : (
+          <>
+            <Skeleton width="10px" height="10px"/>
+            <Skeleton width="10px" height="10px"/>
+            <Skeleton width="10px" height="10px"/>
+            <Skeleton width="10px" height="10px"/>
+          </>
+        )}
       </Modal>
     </Wrapper>
   );
