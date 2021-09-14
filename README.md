@@ -36,4 +36,4 @@
 
 
 ## Deploy Site
-### Foi feito o deploy do site no netlify [buscarestaurantes](https://buscarestaurante.netlify.app).
+  Foi feito o deploy do site no netlify [buscarestaurantes](https://buscarestaurante.netlify.app).
