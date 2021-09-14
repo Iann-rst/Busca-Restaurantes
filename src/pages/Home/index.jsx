@@ -4,7 +4,7 @@ import TextField, { Input } from '@material/react-text-field';
 import SearchIcon from '@material-ui/icons/Search';
 
 //import logo from '../../assets/logo.svg';
-import logo2 from '../../assets/logo.png'
+import logo2 from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
 import {Card, RestaurantCard, Modal, Map, Loader, Skeleton} from '../../components';
 
